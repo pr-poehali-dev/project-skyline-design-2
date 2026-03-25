@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
+import Icon from "@/components/ui/icon"
 import type { SectionProps } from "@/types"
 
 export default function Section({ id, title, subtitle, content, isActive, showButton, buttonText, tags }: SectionProps) {
@@ -34,24 +35,22 @@ export default function Section({ id, title, subtitle, content, isActive, showBu
         </motion.p>
       )}
       {tags && (
-        <motion.div
-          className="flex flex-wrap gap-4 mt-10"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isActive ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.35 }}
-        >
+        <div className="flex flex-wrap gap-6 mt-10">
           {tags.map((tag, i) => (
-            <motion.span
-              key={tag}
-              className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#00C48C]"
+            <motion.div
+              key={tag.label}
+              className="flex items-center gap-3"
               initial={{ opacity: 0, y: 20 }}
               animate={isActive ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.4, delay: 0.4 + i * 0.12 }}
+              transition={{ duration: 0.4, delay: 0.4 + i * 0.15 }}
             >
-              {tag}
-            </motion.span>
+              <Icon name={tag.icon} size={28} className="text-[#00C48C]" />
+              <span className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#00C48C]">
+                {tag.label}
+              </span>
+            </motion.div>
           ))}
-        </motion.div>
+        </div>
       )}
       {showButton && (
         <motion.div
