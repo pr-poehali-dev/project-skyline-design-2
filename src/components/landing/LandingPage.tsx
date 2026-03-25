@@ -44,7 +44,7 @@ export default function LandingPage() {
   return (
     <Layout>
       <div className="fixed top-0 left-0 z-30 p-6 flex items-center gap-3">
-        <img src="https://cdn.poehali.dev/files/821e5539-a663-4dd8-a5f3-ac367fc198b7.png" alt="ShareCycle" className="w-18 h-18 object-contain" />
+        <img src="https://cdn.poehali.dev/files/821e5539-a663-4dd8-a5f3-ac367fc198b7.png" alt="ShareCycle" className="w-12 h-12 object-contain" />
         <span className="text-white font-bold text-4xl tracking-tight">ShareCycle</span>
       </div>
       <nav className="fixed top-0 right-0 h-screen flex flex-col justify-center z-30 p-4">
