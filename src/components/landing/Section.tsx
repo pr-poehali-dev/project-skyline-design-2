@@ -45,9 +45,14 @@ export default function Section({ id, title, subtitle, content, isActive, showBu
               transition={{ duration: 0.4, delay: 0.4 + i * 0.15 }}
             >
               <Icon name={tag.icon} size={28} className="text-[#00C48C]" />
-              <span className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#00C48C]">
-                {tag.label}
-              </span>
+              <div className="flex flex-col">
+                <span className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#00C48C]">
+                  {tag.label}
+                </span>
+                {tag.description && (
+                  <span className="text-sm md:text-base text-neutral-500 mt-1">{tag.description}</span>
+                )}
+              </div>
             </motion.div>
           ))}
         </div>

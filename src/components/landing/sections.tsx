@@ -18,9 +18,9 @@ export const sections = [
     title: 'Как это работает',
     content: 'Выложи вещь за 2 минуты — укажи срок, цену или отметь «бесплатно». Другие студенты видят твоё объявление и связываются напрямую.',
     tags: [
-      { label: 'Простота', icon: 'Zap' },
-      { label: 'Практичность', icon: 'PackageCheck' },
-      { label: 'Надёжность', icon: 'ShieldCheck' },
+      { label: 'Простота', icon: 'Zap', description: 'Объявление за 2 минуты без лишних шагов' },
+      { label: 'Практичность', icon: 'PackageCheck', description: 'Нужная вещь — рядом, в твоём университете' },
+      { label: 'Надёжность', icon: 'ShieldCheck', description: 'Только студенты, только проверенные профили' },
     ]
   },
   {
