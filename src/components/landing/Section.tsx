@@ -35,7 +35,7 @@ export default function Section({ id, title, subtitle, content, isActive, showBu
         </motion.p>
       )}
       {tags && (
-        <div className="flex flex-wrap gap-6 mt-10">
+        <div className="flex flex-wrap gap-14 mt-10">
           {tags.map((tag, i) => (
             <motion.div
               key={tag.label}
