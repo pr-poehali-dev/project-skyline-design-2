@@ -2,7 +2,7 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import type { SectionProps } from "@/types"
 
-export default function Section({ id, title, subtitle, content, isActive, showButton, buttonText }: SectionProps) {
+export default function Section({ id, title, subtitle, content, isActive, showButton, buttonText, tags }: SectionProps) {
   return (
     <section id={id} className="relative h-screen w-full snap-start flex flex-col justify-center p-8 md:p-16 lg:p-24">
       {subtitle && (
@@ -32,6 +32,26 @@ export default function Section({ id, title, subtitle, content, isActive, showBu
         >
           {content}
         </motion.p>
+      )}
+      {tags && (
+        <motion.div
+          className="flex flex-wrap gap-4 mt-10"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isActive ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.35 }}
+        >
+          {tags.map((tag, i) => (
+            <motion.span
+              key={tag}
+              className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#00C48C]"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isActive ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.4, delay: 0.4 + i * 0.12 }}
+            >
+              {tag}
+            </motion.span>
+          ))}
+        </motion.div>
       )}
       {showButton && (
         <motion.div
