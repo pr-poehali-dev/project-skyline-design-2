@@ -43,19 +43,23 @@ export default function LandingPage() {
 
   return (
     <Layout>
+      <div className="fixed top-0 left-0 z-30 p-6 flex items-center gap-3">
+        <img src="https://cdn.poehali.dev/files/821e5539-a663-4dd8-a5f3-ac367fc198b7.png" alt="ShareCycle" className="w-9 h-9 object-contain" />
+        <span className="text-white font-bold text-xl tracking-tight">ShareCycle</span>
+      </div>
       <nav className="fixed top-0 right-0 h-screen flex flex-col justify-center z-30 p-4">
         {sections.map((section, index) => (
           <button
             key={section.id}
             className={`w-3 h-3 rounded-full my-2 transition-all ${
-              index === activeSection ? 'bg-white scale-150' : 'bg-gray-600'
+              index === activeSection ? 'bg-[#00C48C] scale-150' : 'bg-gray-600'
             }`}
             onClick={() => handleNavClick(index)}
           />
         ))}
       </nav>
       <motion.div
-        className="fixed top-0 left-0 right-0 h-0.5 bg-white origin-left z-30"
+        className="fixed top-0 left-0 right-0 h-0.5 bg-[#00C48C] origin-left z-30"
         style={{ scaleX }}
       />
       <div
